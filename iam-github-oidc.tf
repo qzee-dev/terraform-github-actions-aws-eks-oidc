@@ -1,3 +1,21 @@
+#####################################
+# Data Sources
+#####################################
+
+data "aws_caller_identity" "current" {}
+
+data "aws_region" "current" {}
+
+data "aws_eks_cluster" "eks" {
+  name = var.eks_cluster_name
+}
+
+data "aws_ecr_repository" "repo" {
+  name = var.ecr_repository_name
+}
+
+
+
 #######################################################################
 to create oidc provider for githubaction
 #######################################################################
