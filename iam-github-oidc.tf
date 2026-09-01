@@ -40,6 +40,12 @@ resource "aws_iam_role" "github_actions" {
   name = "GithubOIDCAdminRoleFor_fintech-platform"
 
   assume_role_policy = data.aws_iam_policy_document.github_oidc_trust.json
+
+   tags = {
+    ManagedBy = "Terraform"
+    Purpose   = "GitHubOIDC"
+  }
+
 }
 
 ##########################################################################
