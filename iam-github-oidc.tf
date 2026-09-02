@@ -41,6 +41,13 @@ resource "aws_iam_role" "github_actions" {
 
   assume_role_policy = data.aws_iam_policy_document.github_oidc_trust.json
 
+  # STS Credential TTL
+  # max_session_duration = 14400 # 4 hours
+  # max_session_duration = 3600 # 1 hour
+  # max_session_duration = 7200 # 2 hours
+  # max_session_duration = 14400 # 4 hours
+  # max_session_duration = 21600 # 6 hours
+  # max_session_duration = 43200 # 12 hours (max)
    tags = {
     ManagedBy = "Terraform"
     Purpose   = "GitHubOIDC"
